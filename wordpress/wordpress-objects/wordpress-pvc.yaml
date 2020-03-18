@@ -1,0 +1,15 @@
+# We need a PVC to hold Wordpresss software, and everything that the user uploads.
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-testblog
+  labels:
+    app: testblog
+spec:
+  storageClassName: gp2
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
