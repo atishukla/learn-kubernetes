@@ -1,7 +1,7 @@
 FROM node:10.14.1
 
 ENV MINOR_VERSION="2.5"
-ENV VERSION="2.5.4"
+ENV VERSION="2.5.7"
 ENV RUBY_VERSION="ruby-$VERSION"
 
 RUN echo "*******************" && \
