@@ -31,7 +31,7 @@ logLevel = "INFO"
 
 [acme]
 OnHostRule = true
-email = "atishayshukla@gmail.com"
+email = "atishayshukla@hotmail.com"
 storage = "/acme/acme.json"
 entryPoint = "https"
 
