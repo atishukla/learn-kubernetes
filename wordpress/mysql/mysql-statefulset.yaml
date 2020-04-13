@@ -79,4 +79,3 @@ spec:
   selector:
     app: mysql
     tier: mysql
-  clusterIP: None
