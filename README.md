@@ -8,3 +8,11 @@ kops create cluster --name=kubernetes.learn-devops.xyz --state=<URL OF S3 Bucket
 kops update cluster --name kubernetes.learn-devops.xyz --yes --state=<URL OF S3 Bucket>
 ```
 3. It will take around 10 minutes to come up
+
+## To deploy cluster on DO
+```doctl kubernetes cluster create \
+   --region fra1 \
+   --tag kube \
+   --size s-2vcpu-2gb \
+   --count 1 \
+   kube```
