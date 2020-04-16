@@ -10,7 +10,12 @@ This authorization model is based on Roles and Resources. You start by creating 
 3. Get the kubernetes url from vim ~/.kube/config. It would be something like https://xxx-xxxx-xxxx-xxxx-xxxxxxx.k8s.ondigitalocean.com/
 4. Substitute this in the below command to test the service account.
 5. Try to get the pod using cicd service accounts
-```kubectl --insecure-skip-tls-verify --kubeconfig="/dev/null" --server=server-from-kubeconfig-file --token=$TOKEN get pods```
+- To get cluster server url
+Get all cluster
+  ```kubectl config view -o jsonpath='{"Cluster name\tServer\n"}{range .clusters[*]}{.name}{"\t"}{.cluster.server}{"\n"}{end}'```
+  ```kubectl config view -o jsonpath="{.clusters[?(@.name==\"$CLUSTER_NAME\")].cluster.server}"```
+```APISERVER=$(kubectl config view -o jsonpath='{"Cluster name\tServer\n"}{range .clusters[*]}{.name}{"\t"}{.cluster.server}{"\n"}{end}' | tail -1 | awk '{print$2}')```
+```kubectl --insecure-skip-tls-verify --kubeconfig="/dev/null" --server=$APISERVER --token=$TOKEN get pods```
 6. Verify you get output like this
 ```
 Error from server (Forbidden): pods is forbidden: User "system:serviceaccount:default:cicd" cannot list resource "pods" in API group "" in the namespace
