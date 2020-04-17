@@ -16,3 +16,10 @@ kops update cluster --name kubernetes.learn-devops.xyz --yes --state=<URL OF S3 
    --size s-2vcpu-2gb \
    --count 1 \
    kube```
+
+   doctl kubernetes cluster create \
+   --region fra1 \
+   --tag kube \
+   --size s-2vcpu-4gb \
+   --count 2 \
+   kube

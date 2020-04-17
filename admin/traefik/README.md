@@ -26,3 +26,5 @@ kubectl apply -f traefik-deployment.yaml
 ```
 kubectl apply -f traefik-webui-ingress.yaml
 ```
+9. Get Cluster token
+```sed -n 4p ~/.kube/config | awk '{print$2}' | base64 --decode```
