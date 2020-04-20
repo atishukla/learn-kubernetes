@@ -73,6 +73,12 @@ spec:
           containerPort: 443
         - name: webui
           containerPort: 8080
+        env:
+          - name: DO_AUTH_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: traefik-credentials
+                key: DO_AUTH_TOKEN
         # Removed all args, as we are passing the traefik.toml to traefik.
         # args:
         #  Removed the --api argument, because we are passing a traefik.toml file as a configmap,

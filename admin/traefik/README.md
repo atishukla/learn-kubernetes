@@ -8,7 +8,8 @@ kubectl  --namespace=kube-system  create configmap configmap-traefik-toml --from
 ```
 htpasswd -c -b dashboard-users.htpasswd admin <YOUR PASSWORD>
 ```
-
+3. Create secret for DNS
+./create-traefik-credentials.sh
 4. Create secret for the dashboard admin user and password
 ```
 kubectl  --namespace=kube-system  create secret generic secret-traefik-dashboard-users --from-file=dashboard-users.htpasswd

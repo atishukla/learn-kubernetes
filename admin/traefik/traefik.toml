@@ -41,5 +41,8 @@ entryPoint = "https"
 #
 # caServer = "https://acme-staging-v02.api.letsencrypt.org/directory"
 
-  [acme.httpChallenge]
-  entryPoint = "http"
+  [acme.dnsChallenge]
+  provider = "digitalocean"
+
+  [[acme.domains]]
+  main = "*.kubernetes.learn-devops.xyz"

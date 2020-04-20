@@ -1,0 +1,8 @@
+apiVersion: snapshot.storage.k8s.io/v1alpha1
+kind: VolumeSnapshot
+metadata:
+  name: jira-home-pv
+spec:
+  source:
+    name: jira-home-jira-0
+    kind: PersistentVolumeClaim

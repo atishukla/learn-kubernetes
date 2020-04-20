@@ -23,3 +23,6 @@ kops update cluster --name kubernetes.learn-devops.xyz --yes --state=<URL OF S3 
    --size s-2vcpu-4gb \
    --count 2 \
    kube
+
+helm install nfs-server stable/nfs-server-provisioner --set persistence.enabled=true,persistence.storageClass=do-block-storage,persistence.size=2Gi
+helm delete nfs-server
