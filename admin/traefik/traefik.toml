@@ -43,6 +43,7 @@ entryPoint = "https"
 
   [acme.dnsChallenge]
   provider = "digitalocean"
+  delayBeforeCheck = 60
 
   [[acme.domains]]
   main = "*.kubernetes.learn-devops.xyz"

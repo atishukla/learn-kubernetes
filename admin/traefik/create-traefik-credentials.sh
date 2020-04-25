@@ -10,7 +10,7 @@ fi
 echo "First delete the old secret: traefik-credentials"
 kubectl -n kube-system delete secret traefik-credentials  || true
 
-echo "Found traefik.env file, creating kubernetes secret: mysql-credentials"
+echo "Found traefik.env file, creating kubernetes secret: traefik-credentials"
 source ./traefik.env
 
 
