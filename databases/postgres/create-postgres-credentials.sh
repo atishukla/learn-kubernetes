@@ -10,7 +10,7 @@ fi
 echo "First delete the old secret: mysql-credentials"
 kubectl delete secret postgres-credentials  || true
 
-echo "Found mysql.env file, creating kubernetes secret: mysql-credentials"
+echo "Found mysql.env file, creating kubernetes secret: postgres-credentials"
 source ./postgres.env
 
 

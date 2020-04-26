@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prometheus-grafana-datasource
+  namespace: monitoring
+  labels:
+    # This tells grafana that this is the datasource to inject
+    grafana_datasource: '1'
+data:
+    # the below |- tells kubernetes to interpret the rest as text
+  datasource.yaml: |-
+    apiVersion: 1
+    datasources:
+    - name: Prometheus
+      type: prometheus
+      access: proxy
+      orgId: 1
+      url: http://prometheus-server.monitoring.svc.cluster.local
