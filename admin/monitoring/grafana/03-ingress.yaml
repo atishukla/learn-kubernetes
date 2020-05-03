@@ -10,5 +10,5 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: grafana
+          serviceName: monitoring-grafana
           servicePort: 80
